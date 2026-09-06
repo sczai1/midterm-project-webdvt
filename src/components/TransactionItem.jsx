@@ -2,11 +2,6 @@ import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { formatCurrency, categoryIcon } from '../utils/format.js'
 
-/**
- * Single transaction row. Wrapped in React.memo so that re-rendering the
- * Dashboard list (e.g. when a filter changes) does not re-render every row
- * whose props are unchanged.
- */
 function TransactionItem({ transaction }) {
   const { id, title, amount, type, category, date } = transaction
   const isIncome = type === 'income'

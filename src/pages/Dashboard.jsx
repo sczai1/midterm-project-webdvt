@@ -9,8 +9,6 @@ function Dashboard() {
   const [typeFilter, setTypeFilter] = useState('all')
   const [categoryFilter, setCategoryFilter] = useState('all')
 
-  // Balance = total income - total expenses. Recomputed only when
-  // transactions change, not on every filter change.
   const balance = useMemo(() => {
     return transactions.reduce(
       (sum, t) => sum + (t.type === 'income' ? t.amount : -t.amount),
